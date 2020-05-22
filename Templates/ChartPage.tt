@@ -1,0 +1,20 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DiZhua Chart By Nona</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+<body>
+    <style>.box { justify-content:center; display:flex; flex-wrap:wrap;  }; </style>
+    <div class='box'>
+        <# foreach (string chart in charts){ #><#= chart #><# } #> </br>
+    </div>
+</body>
+</html>
