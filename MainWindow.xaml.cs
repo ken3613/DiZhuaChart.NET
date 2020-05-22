@@ -28,6 +28,12 @@ namespace DiZhuaChart.NET
         public MainWindow()
         {
             InitializeComponent();
+            Dzapi api = new Dzapi(@"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJpb3MiLCJpYXQiOjE1ODgwNDcyMTIsImV4cCI6MTU4ODY1MjAxMiwiYXVkIjoiaHR0cHM6Ly9hcGlzLWZmLnphaWguY24vZmxhc2gtYXV0aC92MS9vYXV0aC9qd3QiLCJzdWIiOiJhMWpmYXlsNHpwIiwic2NvcGVzIjpbIm9wZW4iLCJyZWdpc3RlciIsImxvZ2luIl19.2rLFpfQjIoNgKDNQey7cv46jCgoF7iM8Wo8XPKrq-X0");
+            foreach(var i in api.GetPartiesInfo())
+            {
+                textBox.Text += i.name + "\n";
+            }
         }
+
     }
 }

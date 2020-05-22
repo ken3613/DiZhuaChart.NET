@@ -79,6 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class_API\Dzapi.cs" />
     <Compile Include="Class_API\Party.cs" />
     <Compile Include="Templates\ChartPage.cs">
       <AutoGen>True</AutoGen>
