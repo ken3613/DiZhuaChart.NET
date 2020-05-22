@@ -45,6 +45,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -76,11 +79,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class_API\Party.cs" />
     <Compile Include="Templates\ChartPage.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChartPage.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\ChartPageCode.cs" />
+    <Compile Include="Templates\PieChart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PieChart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\PieChartCode.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +136,10 @@
     <Content Include="Templates\ChartPage.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ChartPage.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\PieChart.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PieChart.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
