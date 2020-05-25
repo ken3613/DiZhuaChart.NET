@@ -31,7 +31,7 @@ namespace DiZhuaChart.NET.Templates
             this.Write("<div id=\"");
             
             #line 6 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(chart_id));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Chart_id));
             
             #line default
             #line hidden
@@ -39,21 +39,21 @@ namespace DiZhuaChart.NET.Templates
                     "\r\n        var chart_");
             
             #line 8 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(chart_id));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Chart_id));
             
             #line default
             #line hidden
             this.Write(" = echarts.init(\r\n            document.getElementById(\'");
             
             #line 9 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(chart_id));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Chart_id));
             
             #line default
             #line hidden
             this.Write("\'), \'white\', {renderer: \'canvas\'});\r\n        var option_");
             
             #line 10 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(chart_id));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Chart_id));
             
             #line default
             #line hidden
@@ -95,13 +95,17 @@ namespace DiZhuaChart.NET.Templates
     ""series"": [
         {
             ""type"": ""pie"",
-            ""name"": ""\u5c40\u6570"",
-            ""clockwise"": true,
-            ""data"": [
-                ");
+            ""name"": """);
+            
+            #line 48 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Series_name));
+            
+            #line default
+            #line hidden
+            this.Write("\",\r\n            \"clockwise\": true,\r\n            \"data\": [\r\n                ");
             
             #line 51 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
- foreach (var item in data.Keys)
+ foreach (var item in Data.Keys)
                 { 
             
             #line default
@@ -113,14 +117,14 @@ namespace DiZhuaChart.NET.Templates
             
             #line default
             #line hidden
-            this.Write("\",\r\n                        \"value\": \"");
+            this.Write("\",\r\n                        \"value\": ");
             
             #line 55 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(data[item]));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Data[item]));
             
             #line default
             #line hidden
-            this.Write("\"\r\n                    },\r\n                ");
+            this.Write("\r\n                    },\r\n                ");
             
             #line 57 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
  } 
@@ -178,7 +182,7 @@ namespace DiZhuaChart.NET.Templates
             ""text"": """);
             
             #line 106 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(title));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Title));
             
             #line default
             #line hidden
@@ -186,14 +190,14 @@ namespace DiZhuaChart.NET.Templates
                     "       chart_");
             
             #line 112 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(chart_id));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Chart_id));
             
             #line default
             #line hidden
             this.Write(".setOption(option_");
             
             #line 112 "D:\c#\DiZhuaChart.NET\Templates\PieChart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(chart_id));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Chart_id));
             
             #line default
             #line hidden

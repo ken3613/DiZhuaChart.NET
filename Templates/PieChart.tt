@@ -3,11 +3,11 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<div id="<#= chart_id #>" class="chart-container" style="width:900px; height:500px;"></div>
+<div id="<#= Chart_id #>" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_<#= chart_id #> = echarts.init(
-            document.getElementById('<#= chart_id #>'), 'white', {renderer: 'canvas'});
-        var option_<#= chart_id #> = {
+        var chart_<#= Chart_id #> = echarts.init(
+            document.getElementById('<#= Chart_id #>'), 'white', {renderer: 'canvas'});
+        var option_<#= Chart_id #> = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -45,14 +45,14 @@
     "series": [
         {
             "type": "pie",
-            "name": "\u5c40\u6570",
+            "name": "<#= Series_name #>",
             "clockwise": true,
             "data": [
-                <# foreach (var item in data.Keys)
+                <# foreach (var item in Data.Keys)
                 { #>
                     {
                         "name": "<#= item #>",
-                        "value": "<#= data[item] #>"
+                        "value": <#= Data[item] #>
                     },
                 <# } #>
             ],
@@ -103,11 +103,11 @@
     },
     "title": [
         {
-            "text": "<#= title #>",
+            "text": "<#= Title #>",
             "padding": 5,
             "itemGap": 10
         }
     ]
 };
-        chart_<#= chart_id #>.setOption(option_<#= chart_id #>);
+        chart_<#= Chart_id #>.setOption(option_<#= Chart_id #>);
     </script>

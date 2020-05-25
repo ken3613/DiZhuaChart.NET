@@ -5,9 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiZhuaChart.NET"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="354" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="739"/>
+        Title="DiZhua-Chart" Height="425" Width="265" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="ico.ico">
+    <Grid Background="#FFF6BC54">
+        <DockPanel VerticalAlignment="Bottom">
+            <StatusBar DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                <TextBlock x:Name="tb_Status" Text="帐号状态："></TextBlock>
+            </StatusBar>
+        </DockPanel>
 
+        <Grid Height="85" Margin="0,20,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="img_avatar" Height="84" VerticalAlignment="Top" Width="84" Grid.Column="1">
+                <Image.Clip>
+                    <EllipseGeometry Center="42,42" RadiusX="41" RadiusY="41"/>
+                </Image.Clip>
+            </Image>
+            <Ellipse Grid.Column="1" Stroke="White" StrokeThickness="2" />
+        </Grid>
+        <Grid Height="146" Margin="0,156,0,0" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border BorderThickness="1" Width="114" HorizontalAlignment="Center" CornerRadius="15" Background="#9EEEE168" Margin="0">
+                <TextBlock x:Name="tb_nickname" TextWrapping="Wrap" Text="Nona" Background="{x:Null}" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFE0B10F"/>
+            </Border>
+            <Border BorderThickness="1" Width="114" HorizontalAlignment="Center" CornerRadius="15" Background="#9E689FEE" Margin="0" Grid.Row="1">
+                <TextBlock x:Name="tb_exp" TextWrapping="Wrap" Text="Nona" Background="{x:Null}" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FF0078D7"/>
+            </Border>
+            <Border BorderThickness="1" Width="114" HorizontalAlignment="Center" CornerRadius="15" Background="#9EEC308E" Margin="0" Grid.Row="2">
+                <TextBlock x:Name="tb_gift" TextWrapping="Wrap" Text="Nona" Background="{x:Null}" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FFEC308E"/>
+            </Border>
+            <Border BorderThickness="1" Width="114" HorizontalAlignment="Center" CornerRadius="15" Background="#8241EC30" Margin="0" Grid.Row="3">
+                <TextBlock x:Name="tb_parlor" TextWrapping="Wrap" Text="Nona" Background="{x:Null}" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FF32B425"/>
+            </Border>
+            <Button x:Name="btn_analyze" Content="分析" HorizontalAlignment="Center" Margin="0" Grid.Row="4" Width="114" Template="{DynamicResource ButtonControlTemplate1}" Background="#FFF9DF98" BorderBrush="White" Foreground="#FF755522" FontSize="14">
+                <Button.Resources>
+                    <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="15">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
+                            </Trigger>
+                            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                                <Setter Property="Foreground" Value="#FF838383"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Resources>
+            </Button>
+        </Grid>
     </Grid>
+
+
 </Window>
