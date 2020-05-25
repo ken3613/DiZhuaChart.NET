@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DiZhua Chart By Nona</title>
-            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script>
 </head>
 <body>
     <style>.box { justify-content:center; display:flex; flex-wrap:wrap;  }; </style>

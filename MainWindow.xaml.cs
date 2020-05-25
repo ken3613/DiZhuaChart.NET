@@ -27,12 +27,18 @@ namespace DiZhuaChart.NET
     {
         private readonly Dzapi api;
         public static bool Logined = false;
-        private string AuthPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), @"DZChart\authorization.json");
-        private string HtmlPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), @"DZChart\chart.html");
+        private static readonly string DocPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), @"DZChart");
+        private static readonly string AuthPath = Path.Combine(DocPath, @"authorization.json");
+        private static readonly string HtmlPath = Path.Combine(DocPath, @"chart.html");
 
         public MainWindow()
         {
             InitializeComponent();
+
+            if (!Directory.Exists(DocPath))
+            {
+                Directory.CreateDirectory(DocPath);
+            }
             
             if (File.Exists(AuthPath))
             {

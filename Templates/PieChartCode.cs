@@ -11,8 +11,8 @@ namespace DiZhuaChart.NET.Templates
     {
         public string Title { get; set; }
         private string Chart_id { get; }
-        private string Series_name;
-        private Dictionary<string, int> Data;
+        private string Series_name { get; set; }
+        private Dictionary<string, int> Data { get; }
 
         private string FormChartid()
         {
